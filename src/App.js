@@ -16,8 +16,8 @@ class App extends Component {
 
     return (
       <div className="App" data-test='component-app'>
-        <h1>Current value: {this.state.value}</h1>
-        <button onClick={() => incrementValue()}>Click</button>
+        <h1 data-test='counter-display'>Current value: {this.state.value}</h1>
+        <button onClick={() => incrementValue()} data-test='increment-button'>Click</button>
       </div>
     );
   }

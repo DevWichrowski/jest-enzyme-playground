@@ -12,10 +12,15 @@ test('App renders without crash', () => {
 });
 
 test('App renders incremnet button', () =>{
-
+    const wrapper = shallow(<App />); 
+    const incrementButton = wrapper.find("[data-test='increment-button']");
+    expect(incrementButton.length).toBe(1);
 });
 
-test('renders counter display', () =>{
+test('App renders counter display', () =>{
+    const wrapper = shallow(<App />); // wrappuje <App /> component, moze wrappowac zawsze o 1 poziom w doł, oczywiscie JSX
+    const counterDisplay = wrapper.find("[data-test='counter-display']"); // tak jakby selector z App
+    expect(counterDisplay.length).toBe(1); // oczekujemy ze bedzie 1 element
 
 });
 
